@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #09090b;
+  --color-surface: #18181b;
+  --color-primary: #22c55e;
+  --color-secondary: #3b82f6;
+  --color-accent: #f59e0b;
+  --color-danger: #ef4444;
+  --color-muted: #71717a;
+  --font-sans: Inter, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background text-white antialiased;
+}
+
+/* Custom Scrollbar for "Tower Control" feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted/30 rounded-full hover:bg-muted/50;
+}
