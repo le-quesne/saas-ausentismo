@@ -1,6 +1,6 @@
 // import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Users, Activity, Settings, LogOut, X } from 'lucide-react';
+import { LayoutDashboard, Users, Activity, Settings, LogOut, X, BrainCircuit } from 'lucide-react';
 import clsx from 'clsx';
 
 interface SidebarProps {
@@ -10,9 +10,10 @@ interface SidebarProps {
 
 const Sidebar = ({ isOpen = false, onClose }: SidebarProps) => {
     const navItems = [
-        { to: '/', icon: LayoutDashboard, label: 'Comando de Riesgo' },
-        { to: '/archetypes', icon: Users, label: 'Motor de Arquetipos' },
-        { to: '/simulator', icon: Activity, label: 'Simulador de Continuidad' },
+        { to: '/', icon: LayoutDashboard, label: 'Centro de Resiliencia' },
+        { to: '/predictability', icon: BrainCircuit, label: 'Inteligencia Predictiva' },
+        { to: '/simulator', icon: Activity, label: 'Simulador de Crisis' },
+        { to: '/archetypes', icon: Users, label: 'Segmentación de Fuerza Laboral' },
     ];
 
     return (
@@ -34,9 +35,9 @@ const Sidebar = ({ isOpen = false, onClose }: SidebarProps) => {
                 <div className="p-6 border-b border-white/10 flex items-center justify-between">
                     <div>
                         <h1 className="text-xl font-bold tracking-tight text-white">
-                            OpHealth <span className="text-primary">OS</span>
+                            OpResilience <span className="text-primary">AI</span>
                         </h1>
-                        <p className="text-xs text-muted mt-1">v1.0.0-MVP</p>
+                        <p className="text-xs text-muted mt-1">Plataforma de Continuidad</p>
                     </div>
                     <button
                         onClick={onClose}

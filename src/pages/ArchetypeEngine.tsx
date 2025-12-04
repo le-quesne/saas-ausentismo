@@ -10,16 +10,16 @@ const ArchetypeEngine = () => {
     return (
         <div className="space-y-8">
             <div>
-                <h2 className="text-2xl font-bold text-white tracking-tight">Motor de Arquetipos</h2>
-                <p className="text-muted">Clusterización de comportamiento y perfiles de riesgo.</p>
+                <h2 className="text-2xl font-bold text-white tracking-tight">Segmentación de Fuerza Laboral</h2>
+                <p className="text-muted">Análisis de comportamiento y detección de focos de liderazgo tóxico.</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Main Chart */}
                 <div className="lg:col-span-2">
                     <Explainable
-                        title="Distribución de Arquetipos"
-                        description="Gráfico de dispersión que correlaciona la composición de la fuerza laboral con el puntaje de riesgo. Los puntos más altos indican mayor riesgo."
+                        title="Mapa de Riesgo Conductual"
+                        description="Correlación entre antigüedad, desempeño y ausentismo. Permite identificar si la rotación se debe a fatiga o falta de liderazgo."
                     >
                         <ClusterChart archetypes={mockArchetypes} />
                     </Explainable>
@@ -31,7 +31,7 @@ const ArchetypeEngine = () => {
                     <div className="space-y-4">
                         <Explainable
                             title="Perfil Dominante"
-                            description="El arquetipo de empleado que representa la mayor parte de su fuerza laboral actual."
+                            description="El segmento mayoritario de su plantilla. Su estabilidad define la resiliencia base de la operación."
                         >
                             <div className="p-4 rounded-lg bg-white/5 border border-white/5">
                                 <div className="flex items-center gap-3 mb-2">
@@ -43,8 +43,8 @@ const ArchetypeEngine = () => {
                         </Explainable>
 
                         <Explainable
-                            title="Mayor Riesgo"
-                            description="El grupo que presenta el FRA más alto y requiere atención prioritaria para evitar costos operativos."
+                            title="Foco de Riesgo Crítico"
+                            description="Grupo con mayor probabilidad de licencia inminente debido a burnout o gestión deficiente."
                         >
                             <div className="p-4 rounded-lg bg-white/5 border border-white/5">
                                 <div className="flex items-center gap-3 mb-2">

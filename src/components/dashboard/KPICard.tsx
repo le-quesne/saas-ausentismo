@@ -9,7 +9,7 @@ interface KPICardProps {
     trend: 'up' | 'down' | 'neutral';
     trendValue: string;
     icon: LucideIcon;
-    color: 'primary' | 'danger' | 'accent' | 'secondary';
+    color: 'primary' | 'danger' | 'accent' | 'secondary' | 'success' | 'warning';
 }
 
 const KPICard: React.FC<KPICardProps> = ({ title, value, trend, trendValue, icon: Icon, color }) => {
@@ -18,6 +18,8 @@ const KPICard: React.FC<KPICardProps> = ({ title, value, trend, trendValue, icon
         danger: 'text-danger bg-danger/10',
         accent: 'text-accent bg-accent/10',
         secondary: 'text-secondary bg-secondary/10',
+        success: 'text-emerald-400 bg-emerald-400/10',
+        warning: 'text-amber-400 bg-amber-400/10',
     };
 
     const trendColor = trend === 'up' ? 'text-danger' : trend === 'down' ? 'text-primary' : 'text-muted';

@@ -11,72 +11,70 @@ const RiskCommand = () => {
     const units = useMemo(() => generateMockUnits(12), []);
 
     const totalCost = units.reduce((acc, unit) => acc + unit.projectedCost, 0);
-    const avgFra = Math.round(units.reduce((acc, unit) => acc + unit.fra, 0) / units.length);
-    const criticalUnits = units.filter(u => u.status === 'critical').length;
     // const highRiskUnits = units.filter(u => u.status === 'high').length;
 
     return (
         <div className="space-y-8">
             <div>
-                <h2 className="text-2xl font-bold text-white tracking-tight">Comando de Riesgo</h2>
-                <p className="text-muted">Monitoreo de estabilidad operacional en tiempo real.</p>
+                <h2 className="text-2xl font-bold text-white tracking-tight">Centro de Resiliencia</h2>
+                <p className="text-muted">Monitoreo de continuidad operativa y protección financiera.</p>
             </div>
 
             {/* KPI Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <Explainable
-                    title="Costo Anual Proyectado"
-                    description="Estimación del impacto financiero total basado en los niveles actuales de riesgo de ausentismo y costos laborales por unidad."
+                    title="Capital Protegido (YTD)"
+                    description="Valor financiero preservado mediante la prevención de paradas operativas y optimización de reemplazos."
                 >
                     <KPICard
-                        title="Costo Anual Proyectado"
-                        value={`$${(totalCost / 1000000).toFixed(1)} M`}
+                        title="Capital Protegido"
+                        value={`$${(totalCost * 0.15 / 1000000).toFixed(1)} M`}
                         trend="up"
-                        trendValue="+12.5%"
+                        trendValue="+15%"
                         icon={DollarSign}
-                        color="primary"
+                        color="success"
                     />
                 </Explainable>
 
                 <Explainable
-                    title="Puntaje FRA Global"
-                    description="Factor de Riesgo de Ausentismo promedio ponderado. Un puntaje >50 indica inestabilidad operativa sistémica."
+                    title="EBITDA en Riesgo"
+                    description="Proyección de pérdida operativa directa si no se cubren las brechas de talento detectadas."
                 >
                     <KPICard
-                        title="Puntaje FRA Global"
-                        value={`${avgFra}% `}
-                        trend="up"
-                        trendValue="+4.2%"
-                        icon={Activity}
-                        color="secondary"
-                    />
-                </Explainable>
-
-                <Explainable
-                    title="Unidades Críticas"
-                    description="Número de unidades operativas (Plantas, Tiendas) con un FRA > 75, requiriendo intervención inmediata."
-                >
-                    <KPICard
-                        title="Unidades Críticas"
-                        value={criticalUnits.toString()}
-                        trend="up"
-                        trendValue="+1"
+                        title="EBITDA en Riesgo"
+                        value={`$${(totalCost * 0.05 / 1000).toFixed(0)} K`}
+                        trend="down"
+                        trendValue="-2.1%"
                         icon={AlertTriangle}
                         color="danger"
                     />
                 </Explainable>
 
                 <Explainable
-                    title="Velocidad de Riesgo"
-                    description="Tasa de cambio en el FRA en los últimos 30 días. 'Alta' indica un deterioro rápido de la estabilidad."
+                    title="Índice de Fatiga Organizacional"
+                    description="Métrica predictiva basada en biometría de ánimo. Alerta sobre riesgo de burnout antes de que ocurra la baja."
                 >
                     <KPICard
-                        title="Velocidad de Riesgo"
+                        title="Índice de Fatiga"
                         value="Alta"
+                        trend="up"
+                        trendValue="+5%"
+                        icon={Activity}
+                        color="warning"
+                    />
+                </Explainable>
+
+                <Explainable
+                    title="Respuesta Elástica (Staffing)"
+                    description="Despliegue actual de flota externa para garantizar continuidad operativa sin sobrecargar al equipo interno."
+                >
+                    <KPICard
+                        title="Staffing Activo"
+                        value="12 FTE"
                         trend="neutral"
                         trendValue="Estable"
                         icon={TrendingUp}
-                        color="accent"
+                        color="primary"
                     />
                 </Explainable>
             </div>
@@ -85,8 +83,8 @@ const RiskCommand = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
                 <div className="xl:col-span-3">
                     <Explainable
-                        title="Mapa de Calor de Riesgo"
-                        description="Visualización matricial del estado de riesgo de cada unidad operativa. Permite identificar focos rojos rápidamente."
+                        title="Matriz de Continuidad Operativa"
+                        description="Visión consolidada del estado de salud de todas las plantas. Los bloques rojos indican riesgo inminente de disrupción."
                     >
                         <RiskHeatmap units={units} />
                     </Explainable>
