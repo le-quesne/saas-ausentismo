@@ -1,75 +1,108 @@
-# React + TypeScript + Vite
+# OpResilience AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma integral para transformar la gestión de ausentismo en una estrategia de continuidad operativa y protección financiera.
 
-Currently, two official plugins are available:
+## Descripción General
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+OpResilience AI es una solución SaaS B2B diseñada para grandes empresas que buscan mitigar el impacto financiero y operativo del ausentismo laboral. A diferencia de los sistemas tradicionales de RRHH, esta plataforma utiliza inteligencia predictiva para anticipar riesgos, cuantificar pérdidas potenciales (EBITDA en riesgo) y ofrecer soluciones de respuesta elástica (Staffing On-Demand).
 
-## React Compiler
+### Módulos Principales
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+1.  **Centro de Resiliencia (Dashboard):**
+    *   Monitoreo en tiempo real de KPIs financieros (Capital Protegido, EBITDA en Riesgo).
+    *   Visualización de la salud operativa global mediante una Matriz de Continuidad.
+    *   Alertas tempranas de fatiga organizacional.
 
-Note: This will impact Vite dev & build performances.
+2.  **Inteligencia Predictiva:**
+    *   Análisis de correlación entre el estado de ánimo (Check-in) y el ausentismo.
+    *   Proyecciones de riesgo a 7 días por unidad operativa.
+    *   Detección de patrones de liderazgo tóxico o burnout.
 
-## Expanding the ESLint configuration
+3.  **Simulador de Crisis:**
+    *   Herramienta "What-If" para ensayar escenarios de estrés.
+    *   Evaluación del impacto de estrategias de retención y staffing externo.
+    *   Cálculo de ahorro proyectado y mejora en la cobertura operativa.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+4.  **Segmentación de Fuerza Laboral (Motor de Arquetipos):**
+    *   Clasificación de empleados en arquetipos de riesgo (ej. "Senior Estable", "Junior Volátil").
+    *   Identificación de focos rojos de comportamiento.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tecnologías Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+*   **Frontend:** React, TypeScript, Vite
+*   **Estilos:** Tailwind CSS, clsx
+*   **Visualización de Datos:** Recharts
+*   **Iconografía:** Lucide React
+*   **Enrutamiento:** React Router DOM
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Configuración y Ejecución
+
+### Requisitos Previos
+
+*   Node.js (versión 16 o superior recomendada)
+*   npm o yarn
+
+### Instalación
+
+1.  Clona el repositorio:
+    ```bash
+    git clone https://github.com/tu-usuario/saas-ausentismo.git
+    ```
+2.  Navega al directorio del proyecto:
+    ```bash
+    cd saas-ausentismo
+    ```
+3.  Instala las dependencias:
+    ```bash
+    npm install
+    ```
+
+### Desarrollo Local
+
+Para iniciar el servidor de desarrollo:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+La aplicación estará disponible en `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Construcción para Producción
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Para generar los archivos estáticos optimizados para producción:
+
+```bash
+npm run build
 ```
+
+Los archivos se generarán en la carpeta `dist`.
+
+## Estructura del Proyecto
+
+```
+src/
+├── components/         # Componentes reutilizables
+│   ├── common/         # Componentes genéricos (Explainable, Modal)
+│   ├── dashboard/      # Componentes específicos del dashboard (KPIs, Heatmap)
+│   ├── engine/         # Componentes del motor de arquetipos (Gráficos)
+│   ├── layout/         # Componentes de estructura (Sidebar, AppLayout)
+│   └── simulator/      # Componentes del simulador (Controles)
+├── context/            # Contextos de React (ExplanationContext)
+├── lib/                # Utilidades y datos simulados (mockData)
+├── pages/              # Vistas principales de la aplicación
+├── types/              # Definiciones de tipos TypeScript
+├── App.tsx             # Configuración de rutas
+└── main.tsx            # Punto de entrada
+```
+
+## Modo Explicativo
+
+La plataforma incluye un "Modo Explicativo" global. Al activarlo desde la barra superior, los elementos interactivos se resaltan y, al hacer clic, muestran explicaciones detalladas sobre métricas y conceptos clave, facilitando la adopción por parte de usuarios no técnicos.
+
+## Contribución
+
+1.  Haz un Fork del proyecto.
+2.  Crea una rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`).
+3.  Haz Commit de tus cambios (`git commit -m 'Agrega nueva funcionalidad'`).
+4.  Haz Push a la rama (`git push origin feature/nueva-funcionalidad`).
+5.  Abre un Pull Request.

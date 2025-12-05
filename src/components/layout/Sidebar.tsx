@@ -1,16 +1,29 @@
 // import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Users, Activity, Settings, LogOut, X, BrainCircuit } from 'lucide-react';
+import { LayoutDashboard, Users, Activity, Settings, LogOut, X, BrainCircuit, Home } from 'lucide-react';
 import clsx from 'clsx';
 
+/**
+ * Propiedades para el componente Sidebar.
+ */
 interface SidebarProps {
+    /** Indica si la barra lateral está abierta (en móvil). */
     isOpen?: boolean;
+    /** Función para cerrar la barra lateral. */
     onClose?: () => void;
 }
 
+/**
+ * Barra lateral de navegación principal.
+ * Se adapta a dispositivos móviles con un comportamiento de cajón (drawer).
+ *
+ * @param {SidebarProps} props - Propiedades del componente.
+ * @returns {JSX.Element} La barra lateral renderizada.
+ */
 const Sidebar = ({ isOpen = false, onClose }: SidebarProps) => {
     const navItems = [
-        { to: '/', icon: LayoutDashboard, label: 'Centro de Resiliencia' },
+        { to: '/', icon: Home, label: 'Inicio' },
+        { to: '/dashboard', icon: LayoutDashboard, label: 'Centro de Resiliencia' },
         { to: '/predictability', icon: BrainCircuit, label: 'Inteligencia Predictiva' },
         { to: '/simulator', icon: Activity, label: 'Simulador de Crisis' },
         { to: '/archetypes', icon: Users, label: 'Segmentación de Fuerza Laboral' },

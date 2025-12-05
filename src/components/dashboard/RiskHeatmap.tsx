@@ -3,10 +3,21 @@ import type { OperationalUnit } from '../../types';
 import clsx from 'clsx';
 import { AlertTriangle, CheckCircle, AlertOctagon } from 'lucide-react';
 
+/**
+ * Propiedades para el componente RiskHeatmap.
+ */
 interface RiskHeatmapProps {
+    /** Lista de unidades operativas a visualizar. */
     units: OperationalUnit[];
 }
 
+/**
+ * Visualización de mapa de calor para el riesgo de las unidades operativas.
+ * Muestra una cuadrícula de tarjetas codificadas por color según el nivel de riesgo.
+ *
+ * @param {RiskHeatmapProps} props - Propiedades del componente.
+ * @returns {JSX.Element} El mapa de calor renderizado.
+ */
 const RiskHeatmap: React.FC<RiskHeatmapProps> = ({ units }) => {
     const getStatusColor = (status: OperationalUnit['status']) => {
         switch (status) {

@@ -4,6 +4,13 @@ import { AreaChart, Area, Tooltip, ResponsiveContainer } from 'recharts';
 import Explainable from '../components/common/Explainable';
 
 // Mock data generator for 7-day forecast
+/**
+ * Genera datos simulados para la proyección de riesgo a 7 días.
+ *
+ * @param {number} baseRisk - Nivel de riesgo base.
+ * @param {number} volatility - Volatilidad aleatoria añadida al riesgo.
+ * @returns {Array<{day: string, risk: number}>} Array de objetos con día y nivel de riesgo.
+ */
 const generateForecast = (baseRisk: number, volatility: number) => {
     return Array.from({ length: 7 }, (_, i) => ({
         day: ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'][i],
@@ -38,6 +45,12 @@ const PLANTS = [
     },
 ];
 
+/**
+ * Página "Inteligencia Predictiva".
+ * Muestra alertas tempranas y proyecciones de riesgo basadas en el ánimo y otros factores.
+ *
+ * @returns {JSX.Element} La página de predictibilidad.
+ */
 const Predictability = () => {
     return (
         <div className="space-y-8">

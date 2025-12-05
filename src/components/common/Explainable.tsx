@@ -3,13 +3,27 @@ import { useExplanation } from '../../context/ExplanationContext';
 import clsx from 'clsx';
 import { HelpCircle } from 'lucide-react';
 
+/**
+ * Propiedades para el componente Explainable.
+ */
 interface ExplainableProps {
+    /** Título que aparecerá en el modal de explicación. */
     title: string;
+    /** Descripción detallada que aparecerá en el modal. */
     description: string;
+    /** Elemento hijo que será envuelto y se volverá interactivo en modo explicativo. */
     children: ReactNode;
+    /** Clases CSS adicionales para el contenedor. */
     className?: string;
 }
 
+/**
+ * Componente envoltorio que hace que sus hijos sean "explicables".
+ * Cuando el modo explicativo está activo, al hacer clic en este componente se muestra un modal con información.
+ *
+ * @param {ExplainableProps} props - Propiedades del componente.
+ * @returns {JSX.Element} El componente renderizado.
+ */
 const Explainable: React.FC<ExplainableProps> = ({ title, description, children, className }) => {
     const { isExplanatoryMode, showExplanation } = useExplanation();
 

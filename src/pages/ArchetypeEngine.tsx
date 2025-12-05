@@ -6,6 +6,12 @@ import { Users, TrendingUp, AlertCircle } from 'lucide-react';
 import Explainable from '../components/common/Explainable';
 
 
+/**
+ * Página "Segmentación de Fuerza Laboral".
+ * Analiza y visualiza los arquetipos de comportamiento de los empleados y sus riesgos asociados.
+ *
+ * @returns {JSX.Element} La página del motor de arquetipos.
+ */
 const ArchetypeEngine = () => {
     return (
         <div className="space-y-8">

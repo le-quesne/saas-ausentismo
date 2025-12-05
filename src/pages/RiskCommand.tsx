@@ -6,6 +6,12 @@ import RiskHeatmap from '../components/dashboard/RiskHeatmap';
 import { generateMockUnits } from '../lib/mockData';
 import Explainable from '../components/common/Explainable';
 
+/**
+ * Dashboard principal "Centro de Resiliencia".
+ * Muestra los KPIs críticos de negocio y el mapa de calor de riesgo operativo.
+ *
+ * @returns {JSX.Element} El dashboard de comando de riesgo.
+ */
 const RiskCommand = () => {
     // In a real app, this would be fetched from an API/Supabase
     const units = useMemo(() => generateMockUnits(12), []);

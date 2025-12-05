@@ -1,6 +1,12 @@
 import { X, Info } from 'lucide-react';
 import { useExplanation } from '../../context/ExplanationContext';
 
+/**
+ * Modal que muestra la información detallada de un elemento "explicable".
+ * Se renderiza solo si hay una explicación activa en el contexto.
+ *
+ * @returns {JSX.Element | null} El modal renderizado o null si no hay explicación activa.
+ */
 const ExplanationModal = () => {
     const { activeExplanation, closeExplanation } = useExplanation();
 

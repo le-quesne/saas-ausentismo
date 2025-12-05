@@ -2,10 +2,21 @@ import React from 'react';
 import { ResponsiveContainer, ScatterChart, Scatter, XAxis, YAxis, ZAxis, Tooltip, Cell, ReferenceLine } from 'recharts';
 import type { RiskArchetype } from '../../types';
 
+/**
+ * Propiedades para el componente ClusterChart.
+ */
 interface ClusterChartProps {
+    /** Lista de arquetipos de riesgo a visualizar. */
     archetypes: RiskArchetype[];
 }
 
+/**
+ * Gráfico de dispersión que visualiza la distribución de arquetipos de riesgo.
+ * Muestra la relación entre la composición de la fuerza laboral y el puntaje de riesgo.
+ *
+ * @param {ClusterChartProps} props - Propiedades del componente.
+ * @returns {JSX.Element} El gráfico renderizado.
+ */
 const ClusterChart: React.FC<ClusterChartProps> = ({ archetypes }) => {
     return (
         <div className="bg-surface border border-white/5 rounded-xl p-6 h-[400px]">

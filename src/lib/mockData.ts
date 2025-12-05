@@ -3,6 +3,12 @@ import type { OperationalUnit, RiskArchetype, RiskLevel } from '../types';
 const UNITS = ['Planta A', 'Planta B', 'Centro Logístico Norte', 'Tienda 105', 'Tienda 204', 'Centro de Distribución Sur', 'Hub Tecnológico', 'Call Center'];
 const LOCATIONS = ['Ciudad de México', 'Monterrey', 'Guadalajara', 'Querétaro', 'Tijuana'];
 
+/**
+ * Genera un conjunto de unidades operativas simuladas para pruebas.
+ *
+ * @param {number} count - El número de unidades a generar.
+ * @returns {OperationalUnit[]} Un array de objetos OperationalUnit.
+ */
 export const generateMockUnits = (count: number): OperationalUnit[] => {
     return Array.from({ length: count }).map((_, i) => {
         const fra = Math.floor(Math.random() * (85 - 15) + 15);
@@ -28,6 +34,10 @@ export const generateMockUnits = (count: number): OperationalUnit[] => {
     });
 };
 
+/**
+ * Lista predefinida de arquetipos de riesgo para demostración.
+ * Representa diferentes perfiles de comportamiento de empleados.
+ */
 export const mockArchetypes: RiskArchetype[] = [
     {
         id: 'arch-1',

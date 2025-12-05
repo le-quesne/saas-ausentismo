@@ -7,6 +7,12 @@ import { HelpCircle, Menu } from 'lucide-react';
 import clsx from 'clsx';
 import { useState } from 'react';
 
+/**
+ * Contenido interno del layout principal.
+ * Maneja la barra lateral, el encabezado y el área de contenido principal.
+ *
+ * @returns {JSX.Element} El layout renderizado.
+ */
 const LayoutContent = () => {
     const { isExplanatoryMode, toggleMode } = useExplanation();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -61,6 +67,12 @@ const LayoutContent = () => {
     );
 };
 
+/**
+ * Componente de layout principal de la aplicación.
+ * Provee el contexto de explicación a toda la aplicación.
+ *
+ * @returns {JSX.Element} El layout envuelto en el proveedor de contexto.
+ */
 const AppLayout = () => {
     return (
         <ExplanationProvider>

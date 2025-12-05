@@ -4,6 +4,12 @@ import { Calculator, ArrowRight, DollarSign, Users } from 'lucide-react';
 import Explainable from '../components/common/Explainable';
 import clsx from 'clsx';
 
+/**
+ * Página "Simulador de Crisis".
+ * Permite a los usuarios ajustar variables y ver el impacto proyectado en la continuidad y costos.
+ *
+ * @returns {JSX.Element} La página del simulador.
+ */
 const ContinuitySimulator = () => {
     const [turnoverReduction, setTurnoverReduction] = useState(5);
     const [seniorityMix, setSeniorityMix] = useState(10);

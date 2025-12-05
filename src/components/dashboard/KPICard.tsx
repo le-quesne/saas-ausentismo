@@ -3,15 +3,31 @@ import { ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import clsx from 'clsx';
 
+/**
+ * Propiedades para el componente KPICard.
+ */
 interface KPICardProps {
+    /** Título del KPI. */
     title: string;
+    /** Valor principal a mostrar. */
     value: string;
+    /** Dirección de la tendencia ('up', 'down', 'neutral'). */
     trend: 'up' | 'down' | 'neutral';
+    /** Valor numérico o textual de la tendencia (ej. "+5%"). */
     trendValue: string;
+    /** Icono de Lucide a mostrar. */
     icon: LucideIcon;
+    /** Esquema de color para la tarjeta. */
     color: 'primary' | 'danger' | 'accent' | 'secondary' | 'success' | 'warning';
 }
 
+/**
+ * Tarjeta para mostrar un Indicador Clave de Desempeño (KPI).
+ * Muestra un valor, una tendencia y un icono con un estilo visual consistente.
+ *
+ * @param {KPICardProps} props - Propiedades del componente.
+ * @returns {JSX.Element} La tarjeta KPI renderizada.
+ */
 const KPICard: React.FC<KPICardProps> = ({ title, value, trend, trendValue, icon: Icon, color }) => {
     const colorStyles = {
         primary: 'text-primary bg-primary/10',
